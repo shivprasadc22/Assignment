@@ -39,9 +39,9 @@ public class schema
 			String Country=(String)player.get("country");
 			String Role=(String)player.get("role");
 			
-//			System.out.println(Country);
+			System.out.println(Country);
 //			
-//			System.out.println(Role);
+			System.out.println(Role);
 			
 			
 			if(!Country.equals("India"))
