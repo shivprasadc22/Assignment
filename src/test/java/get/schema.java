@@ -9,11 +9,12 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.testng.annotations.Test;
 
 public class schema 
 {
-	
-	public static void main(String []args) throws IOException, ParseException
+	@Test
+	public void foreignplayers() throws IOException, ParseException
 	{
 		int count=0;
 		JSONParser jsonparser=new JSONParser();
@@ -39,9 +40,9 @@ public class schema
 			String Country=(String)player.get("country");
 			String Role=(String)player.get("role");
 			
-			System.out.println(Country);
+//			System.out.println(Country);
 //			
-			System.out.println(Role);
+//			System.out.println(Role);
 			
 			
 			if(!Country.equals("India"))
@@ -50,9 +51,37 @@ public class schema
 				System.out.println(Name);
 			
 				}
-			
-			
 		}
+	}
+	
+	
+	@Test
+     public void wicketkipper() throws IOException, ParseException
+         {
+    	 JSONParser jsonparser=new JSONParser();
+ 		FileReader reader=new FileReader(".\\json\\players.json");
+ 		Object obj=jsonparser.parse(reader);
+ 		JSONObject players=(JSONObject)obj;
+ 		
+ 		
+ 		JSONArray a=(JSONArray)players.get("player");
+// 		System.out.println(a);
+ 		
+ 		for(int i=0;i<a.size();i++)
+ 		{
+// 			System.out.println(a.get(i));
+ 			JSONObject player=(JSONObject)a.get(i);
+ 			
+			String Role=(String)player.get("role");
+// 			System.out.println(Role);
+ 		
+  
+		if(Role.equals("Wicket-keeper"))
+		{
+			System.out.println(Role);
+		}
+ 	}
+ 		
 	}  
 
 }
