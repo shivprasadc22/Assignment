@@ -50,10 +50,7 @@ public class schema
 				System.out.println(Name);
 			
 				}
-			if(Role.equals("Wicket-keeper"))
-			{
-				System.out.println(Role);
-			}
+			
 			
 		}
 	}  
